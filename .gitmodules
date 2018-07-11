@@ -1,0 +1,9 @@
+[submodule "src/github.com/go-gl/gl"]
+	path = src/github.com/go-gl/gl
+	url = https://github.com/go-gl/gl
+[submodule "src/github.com/go-ini/ini"]
+	path = src/github.com/go-ini/ini
+	url = https://github.com/go-ini/ini
+[submodule "src/github.com/veandco/go-sdl2"]
+	path = src/github.com/veandco/go-sdl2
+	url = https://github.com/veandco/go-sdl2
