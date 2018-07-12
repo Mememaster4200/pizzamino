@@ -51,13 +51,7 @@ func getevents(conf Config, window *sdl.Window, renderer *sdl.Renderer) {
 				case *sdl.QuitEvent:
 					running = false
 				case *sdl.KeyboardEvent:
-					// sdl.Keysym.Sym is always lowercase. don't convert
-					switch string(t.Keysym.Sym) {
-					case conf.P1up:
-						print("Up")
-					default:
-						print(string(t.Keysym.Sym))
-					}
+					keyhandle(t, conf)
 				}
 				sdl.Delay(1000 / FrameRate) // pause every frame
 				// this does not make a stable precise framerate,
