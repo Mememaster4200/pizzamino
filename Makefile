@@ -11,10 +11,11 @@ clean: # clean mess
 	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go clean
 
 fmt: # clean syntax
-	gofmt -l -w src
+	@gofmt -l -w src
 
 get: # get dependencies
 	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go get github.com/veandco/go-sdl2/{sdl,img,mix,ttf}
 
-install: # install build
-	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go install $(GOFILES)
+install: build 
+	@mv bin/pizzamino dist/bin
+	@echo "Copy the 'dist' folder wherever you like"

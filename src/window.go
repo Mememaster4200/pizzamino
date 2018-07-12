@@ -4,11 +4,10 @@ import (
 	"fmt"
 	"github.com/veandco/go-sdl2/sdl" // SDL2 bindings
 	"os"
-	"pzmconfig"
-	"strings"
+	//"strings"
 )
 
-func openwindow(conf pzmconfig.Config, version string) (*sdl.Window, *sdl.Renderer) {
+func openwindow(conf Config, version string) (*sdl.Window, *sdl.Renderer) {
 	var winTitle string = "Pizzamino " + version
 	var winWidth, winHeight int32 = int32(conf.Resx), int32(conf.Resy)
 	var window *sdl.Window
@@ -39,7 +38,7 @@ func openwindow(conf pzmconfig.Config, version string) (*sdl.Window, *sdl.Render
 	return window, renderer
 }
 
-func getevents(conf pzmconfig.Config, window *sdl.Window, renderer *sdl.Renderer) {
+func getevents(conf Config, window *sdl.Window, renderer *sdl.Renderer) {
 
 	var event sdl.Event
 	var FrameRate uint32 = 60
@@ -52,9 +51,12 @@ func getevents(conf pzmconfig.Config, window *sdl.Window, renderer *sdl.Renderer
 				case *sdl.QuitEvent:
 					running = false
 				case *sdl.KeyboardEvent:
-					switch strings.ToUpper(string(t.Keysym.Sym)) {
-					case strings.ToUpper(conf.P1up):
+					// sdl.Keysym.Sym is always lowercase. don't convert
+					switch string(t.Keysym.Sym) {
+					case conf.P1up:
 						print("Up")
+					default:
+						print(string(t.Keysym.Sym))
 					}
 				}
 				sdl.Delay(1000 / FrameRate) // pause every frame

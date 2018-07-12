@@ -7,11 +7,11 @@ import (
 
 func main() {
 	// run everything in our main SDL thread
-	// (SDL crashes with multiple threads)
+	// (avoids some issues with goroutines)
 	var exitcode int
 	sdl.Main(func() {
 		exitcode = run()
 	})
 
-	os.Exit(exitcode) // pass exit code on return
+	os.Exit(exitcode) // pass exit code
 }
