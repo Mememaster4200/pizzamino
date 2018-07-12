@@ -3,7 +3,7 @@ Pizzamino
 
 *Current status:* **pre-alpha v 0.00000001**
 
-Pizzamino is a lightweight action-puzzle game, inspired by a well known puzzle franchise. This clientis made to give everyone the possibility to simulate TGM, a japanese niche version of T****s, as well as custom modes and rulesets.
+Pizzamino is a lightweight action-puzzle game, inspired by a well known puzzle franchise. This client is made to give everyone the possibility to simulate TGM, a japanese niche version of T****s, as well as custom modes and rulesets.
 
 WIP
 ---
